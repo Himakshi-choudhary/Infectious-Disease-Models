@@ -1,221 +1,96 @@
-🦠 Infectious Disease Models – COVID-19 SEIR Modeling & Data Analysis
+INFECTIOUS DISEASE MODELS – COVID-19 SEIR MODELING & DATA ANALYSIS
 
-This repository presents a mathematical and data-driven study of COVID-19 using SEIR-based compartmental models, real-world datasets, nonlinear parameter estimation, and reproduction number analysis.
+This project presents a mathematical and data-driven study of COVID-19 dynamics using SEIR-based infectious disease models, real-world datasets, nonlinear parameter estimation, and reproduction number analysis.
 
-The project integrates epidemiological modeling, data preprocessing, numerical simulation, and least-squares optimization to understand disease transmission dynamics, as detailed in the MSc Phase I project report 
+The work integrates epidemiological modeling with data preprocessing and numerical simulations to understand disease transmission behavior, based on the MSc Phase I project report.
 
-Project_Phase_1
+PROJECT OBJECTIVES
 
-.
+• Analyze real COVID-19 time-series data (India & Nigeria)
+• Implement classical and extended SEIR models
+• Estimate epidemiological parameters using Least Squares Method (LSM)
+• Fit models to real cumulative case data
+• Compute and interpret the basic reproduction number (R₀)
 
-📌 Project Overview
+KEY FEATURES
 
-The main goal of this project is to model the spread of COVID-19 using SEIR-type models and calibrate them using real epidemic data from multiple regions.
-
-Key components include:
-
-COVID-19 time-series data analysis (India & Nigeria)
-
-Simulation of classical and extended SEIR models
-
-Parameter estimation using nonlinear Least Squares Method (LSM)
-
-Computation and interpretation of the basic reproduction number (R₀)
-
-Model validation using real cumulative case data
-
-📊 Features
-
-✔ Real-world COVID-19 dataset preprocessing and smoothing
-✔ Implementation of extended and classical SEIR ODE systems
-✔ Nonlinear least-squares parameter estimation
+✔ COVID-19 dataset cleaning and preprocessing
+✔ SEIR and extended SEIR compartmental models
+✔ Nonlinear least-squares parameter optimization
 ✔ Numerical simulations and curve fitting
-✔ R₀ derivation via next-generation matrix approach
-✔ Comparative analysis across regions
+✔ R₀ computation using next-generation approach
+✔ Comparative regional analysis
 
-🧪 Methodology
-🔹 Data Analysis
+METHODOLOGY
 
-Collected cumulative COVID-19 confirmed case data
+DATA ANALYSIS
 
-Cleaned inconsistencies, reporting spikes, and missing values
+Collected cumulative COVID-19 confirmed cases
 
-Applied smoothing for stable model fitting
+Handled missing values, spikes, and reporting inconsistencies
 
-🔹 SEIR Modeling
+Applied smoothing for stable fitting
 
-Implemented:
+SEIR MODELING
 
-Classical SEIR model (S, E, I, R)
+Susceptible (S)
 
-Extended SEIR models including quarantine and demographic effects
+Exposed (E)
 
-🔹 Parameter Estimation (LSM)
+Infectious (I)
 
-Optimized epidemiological parameters by minimizing:
+Recovered (R)
 
-𝐽
-(
-𝜃
-)
-=
-∑
-𝑖
-=
-1
-𝑛
-(
-𝐼
-𝑚
-(
-𝑡
-𝑖
-;
-𝜃
-)
-−
-𝑦
-𝑖
-)
-2
-J(θ)=
-i=1
-∑
-n
-	​
+Extended models with quarantine and demography
 
-(I
-m
-	​
+PARAMETER ESTIMATION
 
-(t
-i
-	​
+Nonlinear Least Squares optimization
 
-;θ)−y
-i
-	​
+Realistic constraints on parameters
 
-)
-2
+Model calibration using real data
 
-using numerical solvers (e.g., Levenberg–Marquardt).
+REPRODUCTION NUMBER
 
-🔹 Reproduction Number
-𝑅
-0
-=
-𝛼
-1
-𝛼
-2
-(
-𝛼
-2
-+
-𝛼
-7
-)
-(
-𝛼
-3
-+
-𝛼
-4
-+
-𝛼
-7
-)
-R
-0
-	​
+Analytical R₀ formulation
 
-=
-(α
-2
-	​
+Interpretation of outbreak stability
 
-+α
-7
-	​
+RESULTS
 
-)(α
-3
-	​
+• Accurate SEIR model fitting to COVID-19 data
+• Biologically meaningful parameter estimates
+• R₀ > 1 indicating active transmission
+• Demonstrated impact of data preprocessing on model outcomes
 
-+α
-4
-	​
+PROJECT STRUCTURE
 
-+α
-7
-	​
-
-)
-α
-1
-	​
-
-α
-2
-	​
-
-	​
-
-
-Used to assess transmission strength and epidemic stability.
-
-📈 Results
-
-Strong model fit to cumulative COVID-19 data for India and Nigeria
-
-Realistic estimates of transmission, progression, and recovery rates
-
-R₀ values > 1 indicating sustained transmission during study periods
-
-Demonstrated sensitivity of parameter estimates to data preprocessing
-
-📂 Repository Structure
 Infectious-Disease-Models/
-│
-├── data/            # COVID-19 datasets (India, Nigeria)
-├── models/         # SEIR & extended SEIR equations
-├── notebooks/      # Analysis, fitting & simulations
-├── results/        # Plots & fitted curves
-└── README.md
+|
+|-- data/ COVID-19 datasets
+|-- models/ SEIR equations
+|-- notebooks/ analysis & simulations
+|-- results/ plots and fitted curves
+|-- README.txt
 
-🛠 Tech Stack
+TOOLS USED
 
 Python
-
 NumPy
-
 Pandas
-
-SciPy (optimization & ODE solvers)
-
+SciPy
 Matplotlib
 
-🚀 Future Work
+FUTURE EXTENSIONS
 
-Time-varying transmission parameters
+• Vaccination & intervention modeling
+• Time-varying transmission rates
+• Stochastic and spatial models
+• Application to other diseases
 
-Vaccination and intervention modeling
+AUTHOR
 
-Spatial and age-structured models
-
-Application to other diseases (e.g., Leptospirosis)
-
-Sensitivity & uncertainty analysis
-
-📚 References
-
-Key literature used includes:
-
-SEIR model parameter estimation studies
-
-COVID-19 real-world public datasets
-
-Mathematical epidemiology frameworks
-
-(Full reference list available in the project report.)
+Himakshi
+MSc Mathematics
+National Institute of Technology Tiruchirappall
