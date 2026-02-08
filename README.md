@@ -1,91 +1,221 @@
-🦠 COVID-19 Data Analysis for India
+🦠 Infectious Disease Models – COVID-19 SEIR Modeling & Data Analysis
 
-This project presents an exploratory data analysis (EDA) of COVID-19 cases in India using real-world time-series datasets. The goal is to understand the spread of the virus, identify trends, visualize patterns, and extract meaningful insights from the data.
+This repository presents a mathematical and data-driven study of COVID-19 using SEIR-based compartmental models, real-world datasets, nonlinear parameter estimation, and reproduction number analysis.
+
+The project integrates epidemiological modeling, data preprocessing, numerical simulation, and least-squares optimization to understand disease transmission dynamics, as detailed in the MSc Phase I project report 
+
+Project_Phase_1
+
+.
 
 📌 Project Overview
 
-This analysis includes:
+The main goal of this project is to model the spread of COVID-19 using SEIR-type models and calibrate them using real epidemic data from multiple regions.
 
-Loading and cleaning COVID-19 time-series data
+Key components include:
 
-Processing daily and cumulative numbers
+COVID-19 time-series data analysis (India & Nigeria)
 
-Visualizing trends in confirmed, recovered, and death cases
+Simulation of classical and extended SEIR models
 
-Computing growth rates and active cases
+Parameter estimation using nonlinear Least Squares Method (LSM)
 
-Identifying peak periods of spread
+Computation and interpretation of the basic reproduction number (R₀)
 
-Generating graphs for better understanding of the pandemic progression
+Model validation using real cumulative case data
 
-The project is useful for students, researchers, and anyone interested in understanding the COVID-19 dynamics in India.
+📊 Features
 
-📂 Dataset Used
+✔ Real-world COVID-19 dataset preprocessing and smoothing
+✔ Implementation of extended and classical SEIR ODE systems
+✔ Nonlinear least-squares parameter estimation
+✔ Numerical simulations and curve fitting
+✔ R₀ derivation via next-generation matrix approach
+✔ Comparative analysis across regions
 
-The data is taken from Johns Hopkins University CSSE COVID-19 Dataset, which is publicly available on GitHub.
+🧪 Methodology
+🔹 Data Analysis
 
-Dataset includes:
+Collected cumulative COVID-19 confirmed case data
 
-Confirmed Cases
+Cleaned inconsistencies, reporting spikes, and missing values
 
-Recovered Cases
+Applied smoothing for stable model fitting
 
-Death Cases
+🔹 SEIR Modeling
 
-🛠️ Technologies Used
+Implemented:
+
+Classical SEIR model (S, E, I, R)
+
+Extended SEIR models including quarantine and demographic effects
+
+🔹 Parameter Estimation (LSM)
+
+Optimized epidemiological parameters by minimizing:
+
+𝐽
+(
+𝜃
+)
+=
+∑
+𝑖
+=
+1
+𝑛
+(
+𝐼
+𝑚
+(
+𝑡
+𝑖
+;
+𝜃
+)
+−
+𝑦
+𝑖
+)
+2
+J(θ)=
+i=1
+∑
+n
+	​
+
+(I
+m
+	​
+
+(t
+i
+	​
+
+;θ)−y
+i
+	​
+
+)
+2
+
+using numerical solvers (e.g., Levenberg–Marquardt).
+
+🔹 Reproduction Number
+𝑅
+0
+=
+𝛼
+1
+𝛼
+2
+(
+𝛼
+2
++
+𝛼
+7
+)
+(
+𝛼
+3
++
+𝛼
+4
++
+𝛼
+7
+)
+R
+0
+	​
+
+=
+(α
+2
+	​
+
++α
+7
+	​
+
+)(α
+3
+	​
+
++α
+4
+	​
+
++α
+7
+	​
+
+)
+α
+1
+	​
+
+α
+2
+	​
+
+	​
+
+
+Used to assess transmission strength and epidemic stability.
+
+📈 Results
+
+Strong model fit to cumulative COVID-19 data for India and Nigeria
+
+Realistic estimates of transmission, progression, and recovery rates
+
+R₀ values > 1 indicating sustained transmission during study periods
+
+Demonstrated sensitivity of parameter estimates to data preprocessing
+
+📂 Repository Structure
+Infectious-Disease-Models/
+│
+├── data/            # COVID-19 datasets (India, Nigeria)
+├── models/         # SEIR & extended SEIR equations
+├── notebooks/      # Analysis, fitting & simulations
+├── results/        # Plots & fitted curves
+└── README.md
+
+🛠 Tech Stack
 
 Python
 
-Pandas
-
 NumPy
 
-Matplotlib / Seaborn
+Pandas
 
-Jupyter Notebook / Google Colab
+SciPy (optimization & ODE solvers)
 
-📊 Key Features
+Matplotlib
 
-Time-series visualization of COVID-19 spread in India
+🚀 Future Work
 
-Daily vs cumulative trend comparison
+Time-varying transmission parameters
 
-Calculation of active cases
+Vaccination and intervention modeling
 
-Analysis of infection growth rate
+Spatial and age-structured models
 
-Clean, well-commented Python code
+Application to other diseases (e.g., Leptospirosis)
 
-Graphs and plots for better interpretation
+Sensitivity & uncertainty analysis
 
-📈 Sample Output
+📚 References
 
-✔️ Line plots for confirmed, recovered, and death cases
-✔️ Active cases graph
-✔️ Growth rate pattern
-✔️ Peak analysis
+Key literature used includes:
 
+SEIR model parameter estimation studies
 
-📚 Results & Insights
+COVID-19 real-world public datasets
 
-India saw rapid exponential growth during the early waves
+Mathematical epidemiology frameworks
 
-Recovery rate increased steadily over time
-
-Active cases dropped once vaccination and control measures increased
-
-Visual patterns highlight major peaks like the Delta wave
-
-📝 Future Work
-
-Adding SEIR/epidemiological model simulations
-
-State-wise comparison
-
-Forecasting using ML models
-
-Dashboard creation using Plotly/Streamlit
-
-🙌 Acknowledgement
-
-Datasets are sourced from the Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE).
+(Full reference list available in the project report.)
